@@ -1364,6 +1364,7 @@ class AdminImportControllerCore extends AdminController
         }
 
         $this->closeCsvFile($handle);
+        Category::regenerateEntireNtree();
 
         if ($crossStepsVariables !== false) {
             $crossStepsVariables['cat_moved'] = $cat_moved;
